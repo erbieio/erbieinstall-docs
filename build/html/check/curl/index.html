@@ -1,0 +1,653 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reaching RPC &#8212; Erbie Install Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/local.css?v=0b0e7493" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'check/curl/index';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Custom Configuration" href="../../configuration/index.html" />
+    <link rel="prev" title="Erbie Script console" href="../console/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Erbie Install Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../run/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../run/approach/index.html">The Approach</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../run/deploy/index.html">Spin-up Your Own Erbie Node</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../run/deploy/docker.html">Docker Clients Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../run/deploy/local.html">Manual Clients Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../stake/index.html">Become a Validator</a></li>
+
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Check the Node</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../console/index.html">Erbie Script console</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reaching RPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration/index.html">Custom Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../faq/build.html">Problems with building nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/runtime.html">Problems about the nodes runtime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/validator_tool.html">Problems of validator_tool.sh</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/check/curl/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Reaching RPC</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-node-connection-status">View Node Connection Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-blocks">Checkout Blocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-account-balance">Check Account Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-version">Checkout The version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitor-node">Monitor Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-monitor-script">Run Monitor Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-chain">Checkout Chain</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="reaching-rpc">
+<h1>Reaching RPC<a class="headerlink" href="#reaching-rpc" title="Link to this heading">#</a></h1>
+<p>The default port for the execution client JSON-RPC is 8545,  but you can modify the ports of local endpoints in the configuration.
+By default, the RPC interface is only reachable on the local host of your computer. To make it remotely, you might want to expose it
+to the public by changing the address to 0.0.0.0. This will make it reachable over the local network and public IP addresses. In most
+cases, you will also need to set up port forwarding on your router.It is noticed that you should do this with caution as this will
+let anyone on the internet control your node. Malicious actors could access your node to bring down your system or steal your funds
+if you’re using your client as a wallet.</p>
+<p>A way around this is to prevent potentially harmful RPC methods from being modifiable. For example, with Geth, you can declare modifiable
+methods with a flag: –http.api web3,eth,txpool.</p>
+<p>You can also host access to your RPC interface by pointing the service of a web server, like Nginx, to your client’s local address and port.
+This also enables you to set up a certificate for a secure https connection to your RPC.</p>
+<p>The most privacy-preserving and also very simple way to set up a publicly reachable endpoint, you can host it on your Tor onion service.
+This will let you reach the RPC outside your local network without a static public IP address or opened ports. However, keep in mind the RPC
+is accessible only via the Tor network which is not supported by all the applications and might result in connection issues.</p>
+<p>To do this, you have to create your onion service. Check out the documentation on the onion service set up to host your own. You can point
+it to a web server with a proxy to the RPC port or just directly to the RPC.</p>
+<p>Therefore, node operation can be checked through RPC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use the curl command to ensure that curl has been installed, otherwise it cannot be called.</p>
+</div>
+<section id="view-node-connection-status">
+<h2>View Node Connection Status<a class="headerlink" href="#view-node-connection-status" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type:application/json&#39;</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;id&quot;:1}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8545</span>
+</pre></div>
+</div>
+</section>
+<section id="checkout-blocks">
+<h2>Checkout Blocks<a class="headerlink" href="#checkout-blocks" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type:application/json&#39;</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_blockNumber&quot;,&quot;id&quot;:1}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8545</span>
+</pre></div>
+</div>
+</section>
+<section id="check-account-balance">
+<h2>Check Account Balance<a class="headerlink" href="#check-account-balance" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The parameters in params are account and block height, replace the first parameter with the account you want to query</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type:application/json&#39;</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getBalance&quot;,&quot;params&quot;:[&quot;0xE860DD0F14e7a52Fa3012BfA00f4793edCe87EBe&quot;,&quot;pending&quot;],&quot;id&quot;:1}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8545</span>
+</pre></div>
+</div>
+</section>
+<section id="checkout-the-version">
+<h2>Checkout The version<a class="headerlink" href="#checkout-the-version" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_version&quot;,&quot;id&quot;:64}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8545</span>
+</pre></div>
+</div>
+</section>
+<section id="monitor-node">
+<h2>Monitor Node<a class="headerlink" href="#monitor-node" title="Link to this heading">#</a></h2>
+<p>If you want to monitor node operation in real time, you can use the monitoring script.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">function</span><span class="w"> </span>info<span class="o">(){</span>
+<span class="w">   </span><span class="nv">cn</span><span class="o">=</span><span class="m">0</span>
+<span class="w">   </span><span class="nv">vl</span><span class="o">=</span><span class="k">$(</span>wget<span class="w"> </span>https://docker.erbie.io/version&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cat<span class="w"> </span>version<span class="p">|</span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="w">   </span><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">   </span><span class="k">do</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the monitor version is </span><span class="nv">$vl</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cn</span><span class="s2"> second.&quot;</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;node </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">rs1</span><span class="o">=</span><span class="sb">`</span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;id&quot;:64}&#39;</span><span class="w"> </span><span class="m">127</span>.0.0.1:<span class="nv">$1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+<span class="w">            </span><span class="nv">count</span><span class="o">=</span><span class="k">$(</span>parse_json<span class="w"> </span><span class="nv">$rs1</span><span class="w"> </span><span class="s2">&quot;result&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Number of node connections: </span><span class="k">$((</span><span class="m">16#</span><span class="si">${</span><span class="nv">count</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="k">))</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">rs2</span><span class="o">=</span><span class="sb">`</span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_blockNumber&quot;,&quot;id&quot;:64}&#39;</span><span class="w"> </span><span class="m">127</span>.0.0.1:<span class="nv">$1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+<span class="w">            </span><span class="nv">blckNumber</span><span class="o">=</span><span class="k">$(</span>parse_json<span class="w"> </span><span class="nv">$rs2</span><span class="w"> </span><span class="s2">&quot;result&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Block height of the current peer: </span><span class="k">$((</span><span class="m">16#</span><span class="si">${</span><span class="nv">blckNumber</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="k">))</span><span class="s2">&quot;</span>
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">5</span>
+<span class="w">            </span>clear
+<span class="w">            </span><span class="nb">let</span><span class="w"> </span><span class="nv">cn</span><span class="o">+=</span><span class="m">5</span>
+<span class="w">   </span><span class="k">done</span>
+<span class="o">}</span>
+
+<span class="k">function</span><span class="w"> </span>parse_json<span class="o">(){</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">//</span><span class="se">\&quot;</span><span class="p">/</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">|</span>sed<span class="w"> </span><span class="s2">&quot;s/.*</span><span class="nv">$2</span><span class="s2">:\([^,}]*\).*/\1/&quot;</span>
+<span class="o">}</span>
+
+<span class="k">function</span><span class="w"> </span>main<span class="o">(){</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">            </span>info<span class="w"> </span><span class="m">8545</span>
+<span class="w">   </span><span class="k">else</span>
+<span class="w">            </span>info<span class="w"> </span><span class="nv">$1</span>
+<span class="w">   </span><span class="k">fi</span>
+<span class="o">}</span>
+
+main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<section id="run-monitor-script">
+<h3>Run Monitor Script<a class="headerlink" href="#run-monitor-script" title="Link to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>./monitor.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="checkout-chain">
+<h2>Checkout Chain<a class="headerlink" href="#checkout-chain" title="Link to this heading">#</a></h2>
+<p>If the node is started and there is a connection, but the blocks are not synchronized, you can use the monitoring debug script.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1">#!/bin/bash</span>
+<span class="w"> </span><span class="nv">enode</span><span class="o">=(</span><span class="s2">&quot;e1389d912d3a698d71601d998520dc57a2800e417696bdf93553e63bcf31e597&quot;</span>
+<span class="w">      </span><span class="s2">&quot;28192f4f62b8538db9ad9a5f107837ea83f8f06533ddd3fc39451cd0aa8da8bd&quot;</span>
+<span class="w">      </span><span class="s2">&quot;1485287a41bc8bc95b1ef63e66f9e46b49eddc40f0da18d67c07ae755b3643ce&quot;</span>
+<span class="w">      </span><span class="s2">&quot;9de7cb767b330068e376c59d84d84e6073a06b6e784241a9b13aa824ab455326&quot;</span>
+<span class="w">      </span><span class="s2">&quot;d4bea76130db2e51273fa50e96f2a9f08c92c174700a0bdb452ea737633382a0&quot;</span>
+<span class="w">      </span><span class="s2">&quot;04c7aa8da7ba470c8f40bae7a270bbdff450ebbc2d0413026de5545864a1b6d6&quot;</span>
+<span class="w">      </span><span class="s2">&quot;78454a74ed32cf193fafecb53e6a45b12e2a4e25fb0176c7aa1855459e8e862b&quot;</span>
+<span class="w">      </span><span class="s2">&quot;7577b2c26b704a7eae65f9e8db33217fe3f74bd41c550b06b624e23ab7f55d05&quot;</span>
+<span class="w">      </span><span class="s2">&quot;ff031c02094a56842ed55db84d0a8127d3120684cc70ec12e6e8f44ee990b5ac&quot;</span>
+<span class="w">      </span><span class="s2">&quot;8383a25545be7796ae8e676b52eae6d396e82358d703bedec2ab11e723127230&quot;</span>
+<span class="w">      </span><span class="s2">&quot;18e395764e4576759f4d4a932dbdacc91fd967e2a5c3f04d321752d99a7741c8&quot;</span>
+<span class="w">      </span><span class="s2">&quot;ab5053267a9d6e4e37586d3b36c1550f16c43b5dd85f1379e708d89da9789d9b&quot;</span>
+<span class="w">      </span><span class="s2">&quot;5f7363273a1a7bce9e06ca8ebbae84e9879f908700c6ef5d15e928abfb556a21&quot;</span>
+<span class="w">      </span><span class="s2">&quot;4c2f3b23553c8dd0610e7beaffac4cd934f026dcaf0f9d9eeddcd9af85d8943e&quot;</span>
+<span class="w">      </span><span class="s2">&quot;fcdbd389487776e2f89c8429bad3f0edd751b3b8def4aaddbcf5533ec93452c2&quot;</span>
+<span class="w">      </span><span class="s2">&quot;1fc8ece119b7122eb6fc386a7bf72621dd7c4fe4af77632e3177c08f53fdaf09&quot;</span>
+<span class="w">      </span><span class="s2">&quot;7cd2ea1270fb9e56e1f051b180e36bcb85534939fbad02bef4589c7bbf7864d7&quot;</span>
+<span class="w">      </span><span class="s2">&quot;f9d5094c9232b48c5cb05603e8bc0bb1bfb1adb7b063aa2ee3c8c9a3439f4d49&quot;</span>
+<span class="w">      </span><span class="s2">&quot;c3bc1316d5048510ccb0c032aead286db1ed6cc6f6a0f68ef4cd482f85488edc&quot;</span>
+<span class="w">      </span><span class="s2">&quot;ae03016db11b639bb9ed18a6ec39fbc79932572128b4a42ec232ba396e6a216d&quot;</span>
+<span class="w">  </span><span class="o">)</span>
+
+<span class="w"> </span><span class="k">function</span><span class="w"> </span>info<span class="o">(){</span>
+<span class="w">    </span><span class="nv">cn</span><span class="o">=</span><span class="m">0</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span><span class="k">do</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cn</span><span class="s2"> second.&quot;</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;node </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">rs1</span><span class="o">=</span><span class="sb">`</span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;net_peerCount&quot;,&quot;id&quot;:64}&#39;</span><span class="w"> </span><span class="m">127</span>.0.0.1:<span class="nv">$1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+<span class="w">            </span><span class="nv">count</span><span class="o">=</span><span class="k">$(</span>parse_json<span class="w"> </span><span class="nv">$rs1</span><span class="w"> </span><span class="s2">&quot;result&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Number of node connections: </span><span class="k">$((</span><span class="m">16#</span><span class="si">${</span><span class="nv">count</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="k">))</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">rs2</span><span class="o">=</span><span class="sb">`</span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_blockNumber&quot;,&quot;id&quot;:64}&#39;</span><span class="w"> </span><span class="m">127</span>.0.0.1:<span class="nv">$1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+<span class="w">            </span><span class="nv">blockNumber</span><span class="o">=</span><span class="k">$(</span>parse_json<span class="w"> </span><span class="nv">$rs2</span><span class="w"> </span><span class="s2">&quot;result&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Block height of the current peer: </span><span class="k">$((</span><span class="m">16#</span><span class="si">${</span><span class="nv">blockNumber</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="k">))</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">rs3</span><span class="o">=</span><span class="sb">`</span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;eth_getBlockByNumber&quot;,&quot;params&quot;:[&quot;&#39;</span><span class="o">{</span>blockNumber<span class="o">}</span><span class="s1">&#39;&quot;,true],&quot;id&quot;:64}&#39;</span><span class="w"> </span><span class="m">127</span>.0.0.1:<span class="nv">$1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
+<span class="w">            </span><span class="nv">difficulty</span><span class="o">=</span><span class="k">$(</span>parse_json<span class="w"> </span><span class="nv">$rs3</span><span class="w"> </span><span class="s2">&quot;totalDifficulty&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nv">dy</span><span class="o">=</span><span class="k">$((</span><span class="m">16#</span><span class="si">${</span><span class="nv">difficulty</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="k">))</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;current difficulty is </span><span class="nv">$dy</span><span class="s2">&quot;</span>
+<span class="w">            </span><span class="nv">peers</span><span class="o">=</span><span class="k">$(</span>console<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="s2">&quot;admin.peers&quot;</span><span class="k">)</span>
+<span class="w">            </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$peers</span><span class="p">|</span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g;s/,/\n/g&#39;</span><span class="p">|</span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>line
+<span class="w">            </span><span class="k">do</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="s2">&quot;id:&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">                          </span><span class="nv">id</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">line</span><span class="p">##*:</span><span class="si">}</span><span class="p">|</span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;\&quot;&quot;</span><span class="sb">`</span>
+<span class="w">                          </span><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+<span class="w">                          </span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>-lt<span class="w"> </span><span class="si">${#</span><span class="nv">enode</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span><span class="o">]</span>
+<span class="w">                          </span><span class="k">do</span>
+<span class="w">                                  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="si">${</span><span class="nv">enode</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">                                          </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\033[45;36mid: </span><span class="si">${</span><span class="nv">id</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span><span class="s2">.....</span><span class="si">${</span><span class="nv">id</span><span class="p">:</span><span class="nv">0</span><span class="p">-3:</span><span class="nv">3</span><span class="si">}</span><span class="s2">\033[0m&quot;</span>
+<span class="w">                                          </span><span class="k">break</span>
+<span class="w">                                  </span><span class="k">fi</span>
+<span class="w">                                  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>-eq<span class="w"> </span><span class="k">$((</span><span class="si">${#</span><span class="nv">enode</span><span class="p">[@]</span><span class="si">}</span><span class="o">-</span><span class="m">1</span><span class="k">))</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">                                      </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;id: </span><span class="si">${</span><span class="nv">id</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span><span class="s2">.....</span><span class="si">${</span><span class="nv">id</span><span class="p">:</span><span class="nv">0</span><span class="p">-3:</span><span class="nv">3</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">                                  </span><span class="k">fi</span>
+<span class="w">                                  </span><span class="nb">let</span><span class="w"> </span>i++
+<span class="w">                          </span><span class="k">done</span>
+<span class="w">                  </span><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="s2">&quot;difficulty&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">                          </span><span class="nv">df</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">line</span><span class="p">##*:</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">                          </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;difficulty: </span><span class="nv">$df</span><span class="s2">&quot;</span>
+<span class="w">                          </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$df</span><span class="w"> </span>-gt<span class="w"> </span><span class="nv">$dy</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">                              </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\033[32m can sync\033[0m&quot;</span>
+<span class="w">                          </span><span class="k">fi</span>
+<span class="w">                          </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">                  </span><span class="k">fi</span>
+<span class="w">            </span><span class="k">done</span>
+<span class="w">            </span>sleep<span class="w"> </span><span class="m">10</span>
+<span class="w">            </span>clear
+<span class="w">            </span><span class="nb">let</span><span class="w"> </span><span class="nv">cn</span><span class="o">+=</span><span class="m">10</span>
+<span class="w">    </span><span class="k">done</span>
+<span class="o">}</span>
+<span class="w"> </span><span class="k">function</span><span class="w"> </span>console<span class="o">(){</span>
+<span class="w">       </span>expect<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">       spawn ./erbie attach http://127.0.0.1:</span><span class="nv">$1</span>
+<span class="s2">       expect \&quot;&lt;\&quot;</span>
+<span class="s2">       send \&quot;</span><span class="nv">$2</span><span class="s2">\r\&quot;</span>
+<span class="s2">       expect \&quot;&lt;\&quot;</span>
+<span class="s2">       send \&quot;exit\r\&quot;</span>
+<span class="s2">       expect eof</span>
+<span class="s2">       &quot;</span>
+<span class="w"> </span><span class="o">}</span>
+
+<span class="w"> </span><span class="k">function</span><span class="w"> </span>parse_json<span class="o">(){</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="nv">$2</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">       </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="p">//</span><span class="se">\&quot;</span><span class="p">/</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">|</span>sed<span class="w"> </span><span class="s2">&quot;s/.*</span><span class="nv">$2</span><span class="s2">:\([^,}]*\).*/\1/&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">       </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0x0&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w"> </span><span class="o">}</span>
+
+<span class="w"> </span><span class="k">function</span><span class="w"> </span>main<span class="o">(){</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>erbie<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">          </span>sudo<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>erbie:/erb/erbie<span class="w"> </span>./
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">             </span>info<span class="w"> </span><span class="m">8545</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">             </span>info<span class="w"> </span><span class="nv">$1</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w"> </span><span class="o">}</span>
+
+<span class="w"> </span>main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../console/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Erbie Script console</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../configuration/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Custom Configuration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-node-connection-status">View Node Connection Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-blocks">Checkout Blocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-account-balance">Check Account Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-version">Checkout The version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitor-node">Monitor Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-monitor-script">Run Monitor Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-chain">Checkout Chain</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By erbielab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, erbielab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+@import "_static/basic.css";
+@import "_static/pygments.css";
+@import "_static/styles/theme.css";
+@import '_static/styles/bootstrap.css';
+@import '_static/styles/sphinx-book-theme.css';
+@import '_static/styles/pydata-sphinx-theme.css';
+
+html[data-theme=light],html[data-theme=dark]{
+    --pst-color-primary: #9F54BA;
+    --pst-color-warning: #9F54BA;
+    --pst-color-info: #9F54BA;
+    --pst-color-border: #9F54BA;
+}
+html[data-theme=dark]{
+    --bs-body-color: white;
+}
